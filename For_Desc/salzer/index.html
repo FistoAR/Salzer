@@ -30,7 +30,7 @@
   <!--  CSS dependencies -->
   <link type="text/css" rel="stylesheet" href="../assets/css/lightbox.css">
   </link>
-  <link rel="stylesheet" href="./style.css"></link>
+  <link rel="stylesheet" href="./style.css?v=2"></link>
 
   <!------ Fontawesome link  ------->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -99,7 +99,24 @@
     .font-impact{
    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
- 
+ .whatsapp-share-btn {
+  
+  align-items: center;
+
+  background: #ffffff;
+  color: white;
+  border: none;
+  /* padding: 4px 4px; */
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: px;
+  width: 32px;
+
+}
+.whatsapp-share-btn:hover {
+  background: #c9c6c6;
+}
+
     </style>
 </head>
 
@@ -130,9 +147,9 @@
           <!-- <li class="tb-link" data-page="1"><a> HOME</a></li>
           <li class="tb-link" data-page="2"><a> LIST OF SERVICES</a></li> -->
           <li class="tb-link" data-page="4" data-audio-path="./audios/profile.mp3"><a> Profile </a></li>
-          <li class="tb-link" data-page="6" data-audio-path="./audios/Switches.mp3"><a> Switches</a></li>
-          <li class="tb-link" data-page="8" data-audio-path="./audios/Plates.mp3"><a> Plates</a></li>
-          <li class="tb-link" data-page="10" data-audio-path="./audios/boxes & Dimensions.mp3"><a> boxes & Dimensions</a></li>
+          <li class="tb-link" data-page="6" data-audio-path="./audios/Switches.mp3"><a>Moduler Switches</a></li>
+          <li class="tb-link" data-page="8" data-audio-path="./audios/Plates.mp3"><a>Range of Plates</a></li>
+          <li class="tb-link" data-page="10" data-audio-path="./audios/boxes & Dimensions-1.mp3"><a> Boxes & Dimensions</a></li>
           <li class="tb-link" data-page="10" data-audio-path="./audios/Smart Wall Styling.mp3"><a> Smart Wall Styling</a></li>
           <!-- <li class="tb-link" data-page="28" data-audio-path="../audios/products.mp3"><a> PRODUCTS</a></li>
           <li class="tb-link" data-page="40" data-audio-path="../audios/contact_us.mp3"><a> CONTACT US</a></li> -->
@@ -158,13 +175,27 @@
 
 
       </button>
-      <div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
+      <!-- <div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
         <div class="share-link-row">
           <input id="shareInput" type="text">
           <button id="copyLinkBtn" class="copy-link-btn" role="menuitem">Copy Link</button>
         </div>
         <span class="copied-msg" id="copiedMsg">Copied!</span>
-      </div>
+      </div> -->
+<div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
+  <div class="share-link-row">
+    <input id="shareInput" type="text" value="https://yourwebsite.com" readonly>
+    <button id="copyLinkBtn" class="copy-link-btn" role="menuitem">Copy Link</button>
+    <!-- ✅ WhatsApp Share Button -->
+  <button id="whatsappShareBtn" class="whatsapp-share-btn mr-0 ml-auto " role="menuitem">
+    <img src=" https://img.icons8.com/fluency/48/whatsapp.png" alt="WhatsApp" width="32" height="32" class="">
+    
+  </button>
+  </div>
+  <span class="copied-msg" id="copiedMsg">Copied!</span>
+
+  
+</div>
 
 
       <!-- <div class="home-img-container">
@@ -179,7 +210,8 @@
       <div id="flipbook" class="ui-flipbook">
 
 <!-- --------------------------------------------------------- -->
-<!-- ====================================Page 11 Need to replace=================================================== -->
+<!-- ====================================Page 9 Need to replace=================================================== -->
+
 
 
 
@@ -216,26 +248,32 @@
   <!-- -----------------content img----------------- -->
   <div class=" mt-[15%] line-reveal31">
     <div class="flex my-[7%]  ml-[15%]">
-      <img src="../images/salzer-page-table-of-content/no-00.webp" alt="00" class="w-[8%] h-[5%] mr-[2%]"/>
-      <img src="../images/salzer-page-table-of-content/profile-text.webp" alt="profile" class="w-[40%] h-[3%]"/>
+      <img src="../images/salzer-page-table-of-content/no-00.webp" alt="00" class="w-[8%] h-[5%] mr-[2%] tb-link" data-page="4" data-audio-path="./audios/profile.mp3"/>
+      <img src="../images/salzer-page-table-of-content/profile-text.webp" alt="profile" class="w-[40%] h-[3%] tb-link" data-page="4" data-audio-path="./audios/profile.mp3"/>
       <img src="../images/salzer-page-table-of-content/profile-content.webp" alt="profile-content" class="w-[10%] h-[auto] object-contain"/>
     </div>
 
     <div class="flex my-[7%] ml-[15%]">
-      <img src="../images/salzer-page-table-of-content/no-01.webp" alt="01" class="w-[8%] h-[5%] mr-[2%]"/>
-       <img src="../images/salzer-page-table-of-content/moduler-switches.webp" alt="moduler-switches" class="w-[40%] h-[3%]"/>
+        <img src="../images/salzer-page-table-of-content/no-01.webp" alt="01" class="w-[8%] h-[25%] mr-[2%] tb-link" data-page="6" data-audio-path="./audios/Switches.mp3"/>
+       <img src="../images/salzer-page-table-of-content/moduler-switches.webp" alt="moduler-switches" class="w-[40%] h-[3%] tb-link" data-page="6" data-audio-path="./audios/Switches.mp3"/>
       <img src="../images/salzer-page-table-of-content/moduler-switches-content.webp" alt="moduler-switches-content" class="w-[25%] h-[auto] object-contain"/>
     </div>
 
     <div class="flex my-[7%] ml-[15%]">
-      <img src="../images/salzer-page-table-of-content/no-04.webp" alt="04" class="w-[8%] h-[5%] mr-[2%]"/>
-       <img src="../images/salzer-page-table-of-content/range-of-plates.webp" alt="range-of-plates" class="w-[40%] h-[3%]"/>
+      <img src="../images/salzer-page-table-of-content/no-04.webp" alt="04" class="w-[8%] h-[5%] mr-[2%] tb-link" data-page="8" data-audio-path="./audios/Plates.mp3"/>
+       <img src="../images/salzer-page-table-of-content/range-of-plates.webp" alt="range-of-plates" class="w-[40%] h-[3%] tb-link" data-page="8" data-audio-path="./audios/Plates.mp3"/>
       <img src="../images/salzer-page-table-of-content/range-of-plates-content.webp" alt="range-of-plates-content" class="w-[22%] h-[auto] object-contain"/>
     </div>
 
     <div class="flex my-[7%] ml-[15%]">
-      <img src="../images/salzer-page-table-of-content/no-06.webp" alt="06" class="w-[8%] h-[5%] mr-[2%]"/>
-       <img src="../images/salzer-page-table-of-content/smart-wall-styling.webp" alt="smart-wall-styling" class="w-[40%] h-[3%]"/>
+      <img src="../images/salzer-page-table-of-content/no-05.webp" alt="05" class="w-[8%] h-[5%] mr-[2%] tb-link" data-page="10" data-audio-path="./audios/boxes & Dimensions-1.mp3"/>
+       <img src="../images/salzer-page-table-of-content/boxes & dimensions-title.webp" alt="boxes & dimensions" class="w-[40%] h-[3%] tb-link" data-page="10" data-audio-path="./audios/boxes & Dimensions-1.mp3"/>
+      <img src="../images/salzer-page-table-of-content/boxes & dimensions-content.webp" alt="boxes & dimensions-content" class="w-[22%] h-[auto] object-contain"/>
+    </div>
+
+    <div class="flex my-[7%] ml-[15%]">
+      <img src="../images/salzer-page-table-of-content/no-06.webp" alt="06" class="w-[8%] h-[5%] mr-[2%] tb-link" data-page="10" data-audio-path="./audios/Smart Wall Styling.mp3"/>
+       <img src="../images/salzer-page-table-of-content/smart-wall-styling.webp" alt="smart-wall-styling" class="w-[40%] h-[3%] tb-link" data-page="10" data-audio-path="./audios/Smart Wall Styling.mp3"/>
       <img src="../images/salzer-page-table-of-content/smart-wall-styling-content.webp" alt="smart-wall-styling-content" class="w-[22%] h-[auto] object-contain"/>
     </div>
   </div>
@@ -1733,8 +1771,8 @@
     <div id="roomDisplay" class="relative w-full h-[40%] flex items-center justify-center bg-gray-500">
       
       <!-- Switch (Default) -->
-      <img id="switchImg" src="../images/salzer page-9/img-1.webp" alt="" 
-           class="absolute top-[20%] left-[20%] w-[90px] ">
+      <img id="switchImg" src="../images/salzer page-9/img-1-9.webp" alt="" 
+           class="absolute top-[20%] left-[20%] w-[60px] ">
 
       <!-- Sofa -->
       <img src="../images/salzer page-9/green sofa.webp" alt="sofa" class="w-full relative z-10">
@@ -1752,23 +1790,23 @@
       <div class="swiper-wrapper  ">
         
         <div class="swiper-slide ">
-          <img  src="../images/salzer page-9/black-switch-1.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow  hover:scale-130 transition" data-img="../images/salzer page-9/img-1.webp" alt="Swiper">
+          <img  src="../images/salzer page-9/black-switch-1.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow  hover:scale-130 transition" data-img="../images/salzer page-9/img-1-9.webp" alt="Swiper">
         </div>
         <div class="swiper-slide ">
-          <img  src="../images/salzer page-9/wood-finish-switch-2.webp" class="  switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-2.webp" alt="Swiper">
+          <img  src="../images/salzer page-9/wood-finish-switch-2.webp" class="  switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-2-9.webp" alt="Swiper">
         </div>
          <div class="swiper-slide ">
-          <img  src="../images/salzer page-9/red-switch-3.webp" class="switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-3.webp" alt="Swiper">
+          <img  src="../images/salzer page-9/red-switch-3.webp" class="switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-3-9.webp" alt="Swiper">
          </div>
           <div class="swiper-slide ">
-            <img  src="../images/salzer page-9/yellow-switch-4.webp" class=" switchOption pt-[5%] w-17 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-4.webp" alt="Swiper">
+            <img  src="../images/salzer page-9/yellow-switch-4.webp" class=" switchOption pt-[5%] w-17 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-4-9.webp" alt="Swiper">
           </div>
            <div class="swiper-slide ">
-            <img  src="../images/salzer page-9/gray-switch-5.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-5.webp" alt="Swiper">
+            <img  src="../images/salzer page-9/gray-switch-5.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-5-9.webp" alt="Swiper">
            </div>
-            <div class="swiper-slide "><img  src="../images/salzer page-9/blue-switch-6.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-6.webp" alt="Swiper"></div>
+            <div class="swiper-slide "><img  src="../images/salzer page-9/blue-switch-6.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow hover:scale-130 transition" data-img="../images/salzer page-9/img-6-9.webp" alt="Swiper"></div>
              <div class="swiper-slide ">
-              <img  src="../images/salzer page-9/black-switch-7.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow  hover:scale-130 transition" data-img="../images/salzer page-9/img-7.webp" alt="Swiper">
+              <img  src="../images/salzer page-9/black-switch-7.webp" class=" switchOption pt-[9%] w-15 h-15 cursor-pointer shadow  hover:scale-130 transition" data-img="../images/salzer page-9/img-7-9.webp" alt="Swiper">
              </div>
             
             
@@ -1810,7 +1848,6 @@
 </script>
 
 </div>
-
 <!-- ==================================================page 9 end============================================== -->
 <!-- ==================================================page 10 start============================================== --> 
  
@@ -2138,8 +2175,8 @@ function Page1_1_1_Animation() {
     {
       opacity: 1,
       y: 0,
-      duration: 0.4,
-      stagger: 0.15,          // reveal line by line
+      duration: 0.5,
+      stagger: 0,          // reveal line by line
       ease: "power3.out"
     }
   );
@@ -2152,7 +2189,7 @@ function Page1_1_1_Animation() {
           opacity: 1,
           scale: 1,
           duration: 0.75,
-          stagger: 0.15,
+          stagger: 0.1,
           ease: "power3.out"
         }
       );
@@ -2162,7 +2199,7 @@ function Page1_1_1_Animation() {
           opacity: 1,
           scale: 1,
           duration: 0.75,
-          stagger: 0.15,
+          stagger: 0.1,
           ease: "power3.out"
         }
       );
@@ -2186,7 +2223,7 @@ function Page3_1_Animation() {
       opacity: 1,
       y: 0,
       duration: 0.4,
-      stagger: 0.15,          // reveal line by line
+      stagger: 0.1,          // reveal line by line
       ease: "power3.out"
     }
   );
@@ -2198,6 +2235,7 @@ function Page3_2_Animation() {
       opacity: 1,
       x: 0,
       duration: 1,
+      stagger: 0.1,
       ease: "power3.out"
     }
   );
@@ -2209,6 +2247,7 @@ function Page3_3_Animation() {
       opacity: 1,
       x: 0,
       duration: 1,
+      stagger: 0.1,
       ease: "power3.out"
     }
   );
@@ -2220,6 +2259,7 @@ function Page4_1_Animation() {
       opacity: 1,
       scale: 1,                   // zoom out to normal size
       duration: 1.2,
+      stagger: 0,
       ease: "power3.out"
     }
   );
@@ -2231,31 +2271,31 @@ function Page4_1_Animation() {
       opacity: 1,
       y: 0,
       duration: 1,
-      stagger: 0.1,
+      stagger: 0,
       ease: "power3.out"
     }
   );
 }
 function Page6_1_Animation() {
    gsap.fromTo('.right-image3',
-    { opacity: 0, y: 50 },   // starting state
+    { opacity: 0, y: 25 },   // starting state
     {
       opacity: 1,
       y: 0,
-      duration: 1,
-      stagger: 0.1,
+      duration: 0.5,
+      stagger: 0,
       ease: "power3.out"
     }
   );
 }
 function Page6_2_Animation() {
   gsap.fromTo('.right-image3-2',
-    { opacity: 0, y: 50 },   // starting state
+    { opacity: 0, y: 25 },   // starting state
     {
       opacity: 1,
       y: 0,
-      duration: 1,
-      stagger: 0.1,
+      duration: 0.5,
+      stagger: 0,
       ease: "power3.out"
     }
   );
@@ -2266,7 +2306,7 @@ function Page8_1_Animation() {
     {
       opacity: 1,
       y: 0,                    // move down to normal position
-      duration: 1.2,
+      duration: 1,
       ease: "power3.out"
     }
   );
@@ -2515,7 +2555,7 @@ function Page12_2_Animation() {
 
   <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js  "></script> -->
   <!-- <script type="text/javascript" src="../script.js"></script> -->
-  <script type="text/javascript" src="./script.js"></script>
+  <script type="text/javascript" src="./script.js?v=2"></script>
   <script>
   const audioPlayer = document.getElementById("navAudio");
 
@@ -2558,6 +2598,13 @@ function Page12_2_Animation() {
   });
 </script>
 
+<script>
+  document.getElementById("whatsappShareBtn").addEventListener("click", function () {
+    const pageUrl = document.getElementById("shareInput").value || window.location.href;
+    const whatsappUrl = "https://wa.me/?text=" + encodeURIComponent(pageUrl);
+    window.open(whatsappUrl, "_blank");
+  });
+</script>
 
 </body>
 

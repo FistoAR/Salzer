@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salzer Catalogue</title>
   <link rel="icon" href="../images/salzer profile img/image.png">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,6 +16,78 @@
 
 <body style="background-color: gainsboro;">
 
+
+<!-- ---------------------------------  -->
+<div>
+ <button id="navToggle" class="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-icon">
+          <span class="hamburger-bar bar1"></span>
+          <span class="hamburger-bar bar2"></span>
+          <span class="hamburger-bar bar3"></span>
+        </span>
+      </button>
+      <!-- Overlay -->
+      <div id="navOverlay" class="nav-overlay"></div>
+      <!-- Floating Table of Contents Nav -->
+      <nav id="tocNav" class="toc-floating" aria-label="Table of Contents">
+        <div class="toc-title">Table of contents</div>
+        <ul class="toc-list">
+          <!-- <li class="tb-link" data-page="1"><a> HOME</a></li>
+          <li class="tb-link" data-page="2"><a> LIST OF SERVICES</a></li> -->
+          <li class="tb-link" data-target="profile-section" data-audio-path="../audios/profile.mp3"><a> Profile </a></li>
+          <li class="tb-link" data-target="moduler-switches-section" data-audio-path="../audios/Switches.mp3"><a>Moduler Switches</a></li>
+          <li class="tb-link" data-target="range-of-plates-section" data-audio-path="../audios/Plates.mp3"><a>Range of Plates</a></li>
+          <li class="tb-link" data-target="boxes & dimensions-section" data-audio-path="../audios/boxes & Dimensions-1.mp3"><a> Boxes & Dimensions</a></li>
+          <li class="tb-link" data-target="smart-wall-styling-section" data-audio-path="../audios/Smart Wall Styling.mp3"><a> Smart Wall Styling</a></li>
+          <!-- <li class="tb-link" data-page="28" data-audio-path="../audios/products.mp3"><a> PRODUCTS</a></li>
+          <li class="tb-link" data-page="40" data-audio-path="../audios/contact_us.mp3"><a> CONTACT US</a></li> -->
+        </ul>
+      </nav>
+       <audio id="navAudio"></audio>
+      <button id="shareBtn" class="share-btn" aria-label="Share this page">
+        <!-- Replace the previous SVG in your .share-btn with this: -->
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background with green border -->
+  <circle cx="15" cy="15" r="14" fill="#ffffff" stroke="#0f2f1d" stroke-width="2"/>
+  
+  <!-- Share icon in green -->
+  <g>
+    <circle cx="9" cy="15.5" r="2.5" fill="#0f2f1d" />
+    <circle cx="21" cy="8.5" r="2.5" fill="#0f2f1d" />
+    <circle cx="21" cy="21.5" r="2.5" fill="#0f2f1d" />
+    <path d="M11.2 14.2l7.6-4.2M11.2 16.8l7.6 4.2" 
+          stroke="#0f2f1d" stroke-width="1.6" stroke-linecap="round" />
+  </g>
+</svg>
+
+
+
+      </button>
+      <!-- <div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
+        <div class="share-link-row">
+          <input id="shareInput" type="text">
+          <button id="copyLinkBtn" class="copy-link-btn" role="menuitem">Copy Link</button>
+        </div>
+        <span class="copied-msg" id="copiedMsg">Copied!</span>
+      </div> -->
+<div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
+  <div class="share-link-row">
+    <input id="shareInput" type="text" value="https://yourwebsite.com" readonly>
+    <button id="copyLinkBtn" class="copy-link-btn" role="menuitem">Copy Link</button>
+<span class="copied-msg" id="copiedMsg">Copied!</span>
+    <!-- ✅ WhatsApp Share Button -->
+  <button id="whatsappShareBtn" class="whatsapp-share-btn mr-0 ml-auto" role="menuitem">
+    <img src=" https://img.icons8.com/fluency/48/whatsapp.png" alt="WhatsApp" width="24" height="24">
+    
+  </button>
+
+  </div>
+
+
+</div>
+
+
+  <!-- ----------------------------------  -->
   <div class="back-top-wrapper">
     <div class="back-top-button">
       <i class="fa-solid fa-arrow-up"></i>
@@ -77,10 +149,11 @@
   <!-- -----------------content img----------------- -->
   <div class="revealimage">
     
-      <img src="../images/mobile-screen/salzer-page-table-of-content/profile-full-text.webp" alt="00" class="w-[75%]  absolute top-[15%] left-[6%]"/>
-      <img src="../images/mobile-screen/salzer-page-table-of-content/moduler-switches-full-content.webp" alt="00" class="w-[90%]   absolute top-[30%] left-[6%]"/>
-      <img src="../images/mobile-screen/salzer-page-table-of-content/range-of-plates-full-content.webp" alt="00" class="w-[90%]   absolute top-[55%] left-[6%]"/>
-      <img src="../images/mobile-screen/salzer-page-table-of-content/smart-wall-full-content.webp" alt="00" class="w-[90%]   absolute top-[70%] left-[6%]"/>
+      <img src="../images/mobile-screen/salzer-page-table-of-content/profile-full-text.webp" alt="00" class="w-[75%]  absolute top-[10%] left-[6%] nav-links"  data-target="profile-section" data-audio-path="../audios/profile.mp3" />
+      <img src="../images/mobile-screen/salzer-page-table-of-content/moduler-switches-full-content.webp" alt="04" class="w-[90%]   absolute top-[25%] left-[6%] nav-links" data-target="moduler-switches-section" data-audio-path="../audios/Switches.mp3"/>
+      <img src="../images/mobile-screen/salzer-page-table-of-content/range-of-plates-full-content.webp" alt="05" class="w-[90%]   absolute top-[53%] left-[6%] nav-links" data-target="range-of-plates-section" data-audio-path="../audios/Plates.mp3"/>
+      <img src="../images/mobile-screen/salzer-page-table-of-content/boxes & dimensions-full-content.webp" alt="06" class="w-[90%]   absolute top-[68%] left-[6%] nav-links" data-target="boxes & dimensions-section" data-audio-path="../audios/boxes & Dimensions-1.mp3"/>
+      <img src="../images/mobile-screen/salzer-page-table-of-content/smart-wall-full-content.webp" alt="07" class="w-[90%]   absolute top-[80%] left-[6%] nav-links" data-target="smart-wall-styling-section" data-audio-path="../audios/Smart Wall Styling.mp3"/>
 
     
   </div>
@@ -96,7 +169,7 @@
  <!-- =========================================page 1.2 end================================ -->
  <!-- =========================================page 2 start================================ -->
   
-<div class="page relative  ">
+<div class="page relative  " id="profile-section"`>
   <img src="../images/mobile-screen/white_blank.webp" alt="white-bg" class="h-[100%] w-[100%]"/>
   <div class="">
     <img src="../images/mobile-screen/page__2/side-bar.webp" alt="sidebar" class="absolute top-0 left-0  h-[100%] w-[30%]"/>
@@ -113,7 +186,7 @@
 
  <!-- ==========================================page 3 start=============================== -->
 
-<div class="page relative ">
+<div class="page relative " >
   <img src="../images/mobile-screen/white_blank.webp" alt="white-bg" class="h-[100%] w-[100%] relative"/>
   <div>
     <img src="../images/mobile-screen/page__3/side-bar.webp" alt="side-bar" class="w-[30%] z-1 h-[100%] absolute top-0 right-0" />
@@ -135,7 +208,7 @@
   <!-- ===============================page 3 end====================================== -->
   <!-- ===============================page 4 start====================================== -->
 
-<div class="page relative ">
+<div class="page relative " id="moduler-switches-section">
   <img src="../images/mobile-screen/white_blank.webp" alt="white-bg" class="h-[100%] w-[100%] relative"/>
   <img src="../images/mobile-screen/page__4/page-no-01.webp" alt="01" class="absolute w-[5%] bottom-[1%] left-[1%] z-99 "/>
  <div class="flex">
@@ -196,7 +269,7 @@
   <!-- ===============================page 6 end====================================== -->
   <!-- ===============================page 7 start====================================== -->
   
-  <div class="page relative ">
+  <div class="page relative " id="range-of-plates-section">
   <img src="../images/mobile-screen/white_blank.webp" alt="white-bg" class="h-[100%] w-[100%]"/>
     <img src="../images/mobile-screen/page__7/page-no-04.webp" alt="04" class="absolute w-[5%] bottom-[1%] right-[1%] z-99 "/>
   <img src="../images/mobile-screen/page__7/side-bar.webp" alt="side-bar" class="absolute w-[25%] h-[100%] top-0 right-0"/>
@@ -215,7 +288,7 @@
   <!-- ===============================page 7 end====================================== -->
   <!-- ===============================page 8 start====================================== -->
   
-  <div class="page relative">
+  <div class="page relative" id="boxes & dimensions-section">
   <img src="../images/mobile-screen/white_blank.webp" alt="white-bg" class="h-[100%] w-[100%] relative"/>
    <img src="../images/mobile-screen/page__8/page-no-05.webp" alt="05" class="absolute w-[5%] bottom-[1%] left-[1%] z-99 "/>
   <div class="revealimage">
@@ -231,7 +304,7 @@
   <!-- ===============================page 8 end====================================== -->
    <!-- ===============================page 9 start====================================== -->
   
-  <div class="page relative ">
+  <div class="page relative " id="smart-wall-styling-section">
   <img src="../images/mobile-screen/white_blank.webp" alt="white-bg" class="h-[100%] w-[100%] "/>
    <img src="../images/mobile-screen/page-9/page-no-06.png" alt="06" class="absolute w-[5%] bottom-[1%] right-[1%] z-99 "/>
   <div class="w-[100%] absolute top-0 revealimage">
@@ -239,8 +312,8 @@
     <div id="roomDisplay" class="relative w-[100%] h-[40%] flex items-center justify-center bg-gray-500">
       
       <!-- Switch (Default) -->
-      <img id="switchImg" src="../images/mobile-screen/salzer page-9/img-1.webp" alt="" 
-           class="absolute top-[20%] left-[20%] w-[15%]">
+      <img id="switchImg" src="../images/mobile-screen/salzer page-9/img-1-9.webp" alt="" 
+           class="absolute top-[20%] left-[20%] w-[10%]">
 
       <!-- Sofa -->
       <img src="../images/mobile-screen/salzer page-9/green sofa.webp" alt="sofa" class="w-[100%] relative z-10">
@@ -254,23 +327,23 @@
 <div class=" h-[auto] revealimage">
 <div class="  w-[90%] h-[100%] left-[5%] bottom-[-120%] absolute  z-800 flex gap-[3%] ">
          <div class=" ">
-          <img  src="../images/mobile-screen/salzer page-9/black-switch-1.webp" class=" object-contain switchOption  w-[10vw] h-[10vw] cursor-pointer shadow  hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-1.webp" alt="Swiper">
+          <img  src="../images/mobile-screen/salzer page-9/black-switch-1.webp" class=" object-contain switchOption  w-[10vw] h-[10vw] cursor-pointer shadow  hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-1-9.webp" alt="Swiper">
         </div>
         <div class="">
-          <img  src="../images/mobile-screen/salzer page-9/wood-finish-switch-2.webp" class=" object-contain switchOption  w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-2.webp" alt="Swiper">
+          <img  src="../images/mobile-screen/salzer page-9/wood-finish-switch-2.webp" class=" object-contain switchOption  w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-2-9.webp" alt="Swiper">
         </div>
          <div class="">
-          <img  src="../images/mobile-screen/salzer page-9/red-switch-3.webp" class=" object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-3.webp" alt="Swiper">
+          <img  src="../images/mobile-screen/salzer page-9/red-switch-3.webp" class=" object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-3-9.webp" alt="Swiper">
          </div>
           <div class=" ">
-            <img  src="../images/mobile-screen/salzer page-9/yellow-switch-4.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-4.webp" alt="Swiper">
+            <img  src="../images/mobile-screen/salzer page-9/yellow-switch-4.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-4-9.webp" alt="Swiper">
           </div>
            <div class=" ">
-            <img  src="../images/mobile-screen/salzer page-9/gray-switch-5.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-5.webp" alt="Swiper">
+            <img  src="../images/mobile-screen/salzer page-9/gray-switch-5.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-5-9.webp" alt="Swiper">
            </div>
-            <div class=" "><img  src="../images/mobile-screen/salzer page-9/blue-switch-6.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-6.webp" alt="Swiper"></div>
+            <div class=" "><img  src="../images/mobile-screen/salzer page-9/blue-switch-6.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-6-9.webp" alt="Swiper"></div>
              <div class=" ">
-              <img  src="../images/mobile-screen/salzer page-9/black-switch-7.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow  hover:scale-130 transition" data-img=".../images/mobile-screen/salzer page-9/img-7.webp" alt="Swiper">
+              <img  src="../images/mobile-screen/salzer page-9/black-switch-7.webp" class="object-contain switchOption   w-[10vw] h-[10vw] cursor-pointer shadow  hover:scale-130 transition" data-img="../images/mobile-screen/salzer page-9/img-7-9.webp" alt="Swiper">
              </div>
             
 </div>
@@ -415,10 +488,50 @@
   }
 </style>
 <!-- <script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script> -->
-  
+ <!-- Hidden audio player -->
+<audio id="infoAudio"></audio>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tocLinks = document.querySelectorAll('.tb-link'); // all li items
+  const audio = document.getElementById('infoAudio');     // audio element
+
+  tocLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('data-target');       // section id
+      const audioPath = this.getAttribute('data-audio-path');  // audio file path
+      const targetEl = document.getElementById(targetId);
+
+      // Smooth scroll to section
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Play audio
+      if (audioPath && audio) {
+        audio.src = audioPath;
+        audio.currentTime = 0; // restart from beginning
+        audio.play().catch(err => {
+          console.log("Audio play error:", err);
+        });
+      }
+    });
+  });
+});
+</script>
+<script>
+  document.getElementById("whatsappShareBtn").addEventListener("click", function () {
+    const pageUrl = document.getElementById("shareInput").value || window.location.href;
+    const whatsappUrl = "https://wa.me/?text=" + encodeURIComponent(pageUrl);
+    window.open(whatsappUrl, "_blank");
+  });
+</script>
 
 
-  <script src="./script.js"></script>
+
+  <script src="./script.js?v=2"></script>
 
 </body>
 
