@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salzer Catalogue</title>
+    <link rel="icon" href="./images/favicon_io/favicon.ico" >
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        @media screen and (min-width: 992px) {
+            body {
+                overflow-y: hidden;
+                overflow-x: hidden;
+            }
+
+        }
+
+
+        #content {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #content object {
+            width: 100%;
+            height: 100%;
+            border: none;
+            min-height: 100vh;
+            background-color: none;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #preloader video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            user-select: none;
+            pointer-events: none;
+        }
+
+    </style>
+    <!-- <style>
+  /* Default size (desktop/tablet) */
+  .preloader-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Mobile devices (max-width 600px) */
+  @media (max-width: 600px) {
+    .preloader-logo {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  /* Very small phones (max-width 400px) */
+  @media (max-width: 400px) {
+    .preloader-logo {
+      width: 60px;
+      height: 60px;
+    }
+  }
+</style> -->
+</head>
+
+<body>
+    <!-- <div id="preloader">
+        <video id="preloader-video" src="./ooda_pre_loader.mp4" autoplay playsinline></video>
+    </div> -->
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white z-[9999]">
+  <img src="./images/image.webp" alt="Company Logo" class="w-24 h-10 sm:w-20 sm:h-10 md:w-24 md:h-10 lg:w-28 lg:h-10">
+</div>
+
+<!-- Your page content -->
+<div id="pageContent" class="opacity-0 translate-y-10">
+<div id="content"></div>
+   
+</div>
+
+    
+</body>
+<!-- <script>
+  const video = document.getElementById("preloader-video");
+  const preloader = document.getElementById("preloader");
+
+  let domReady = false;
+  let finalPlayStarted = false;
+  let waitToFinishOnce = false;
+
+ video.muted = true;
+video.play().catch(() => {});
+
+function enableSoundOnce() {
+  if (window.innerWidth >= 992) video.muted = false;
+  window.removeEventListener("click", enableSoundOnce);
+  window.removeEventListener("touchstart", enableSoundOnce);
+}
+
+window.addEventListener("click", enableSoundOnce);
+window.addEventListener("touchstart", enableSoundOnce);
+
+  // Wait for DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", function () {
+    domReady = true;
+  });
+
+  video.addEventListener("ended", function () {
+    if (!domReady) {
+      // DOM not ready, loop video
+      video.currentTime = 0;
+      video.play();
+    }  else {
+      // Final play completed, remove preloader
+      preloader.style.transition = "opacity 0.5s ease";
+      preloader.style.opacity = 0;
+      preloader.style.pointerEvents = "none";
+      setTimeout(() => {
+        preloader.remove();
+         const obj = document.querySelector("#content object");
+        if (obj && obj.contentWindow) {
+          obj.contentWindow.postMessage({ trigger: "startAnimation" }, "*");
+        }
+      }, 600); // give time for fade-out
+    }
+  });
+</script> -->
+
+<script>
+  const embedded = document.getElementById("content");
+   window.addEventListener("message", function (event) {
+      // You could add origin checks here for security
+      if (event.data && event.data.action === "toggleFullscreen") {
+        if (!document.fullscreenElement) {
+          if (embedded.requestFullscreen) {
+            embedded.requestFullscreen();
+          } else if (embedded.webkitRequestFullscreen) {
+            embedded.webkitRequestFullscreen();
+          } else if (embedded.msRequestFullscreen) {
+            embedded.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script>
+    function load_home() {
+        var isMobile = window.innerWidth <= 1115;
+        var folderPath = isMobile ? 'For Mobile, Tab/index.html' : 'For_Desc/salzer/index.html';
+        if (!document.getElementById("content")) {
+            console.error("Content element not found");
+            return;
+        }
+        document.getElementById("content").innerHTML =
+            '<object type="text/html" data="' + folderPath + '" style="width:100%; height:600px;"></object>';
+    }
+    window.onload = load_home;
+</script>
+<!-- GSAP CDN (only once in your project) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    // Preloader logo animation (scale + rotate + move up) - slower
+    gsap.to("#preloader img", {
+      scale: 1.3,
+      rotate: 360,
+      duration: 2, // was 1 → now slower
+      ease: "power3.inOut",
+    });
+
+    // Slide preloader up and hide - slower
+    gsap.to("#preloader", {
+      x: "-100%",
+      duration: 2,   // was 1 → now slower
+      delay: 2,      // wait until logo animation is done
+      ease: "power4.inOut",
+      onComplete: () => {
+        document.getElementById("preloader").style.display = "none";
+      }
+    });
+
+    // Content reveal (slide up + fade in) - smoother
+    gsap.to("#pageContent", {
+      opacity: 1,
+      y: 0,
+      duration: 2,   // was 1 → now slower
+      delay: 2.2,    // starts after preloader is almost gone
+      ease: "power3.out"
+    });
+  });
+</script>
+
+
+</html>
