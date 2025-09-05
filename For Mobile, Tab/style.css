@@ -156,8 +156,8 @@ html, body {
 /* --- Floating TOC Styles --- */
 .toc-floating {
     position: fixed;
-    top: 3.25%;
-    left: 6%;
+    top: 9%;
+    left: 3%;
     min-width: 228px;
     max-width: 96vw;
     background: #fff; /* white background */
