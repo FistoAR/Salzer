@@ -234,7 +234,7 @@ html, body {
 }
 
 @media (max-width: 650px) {
-    .toc-floating {
+    /* .toc-floating {
         left: 0;
         top: 0;
         right: 0;
@@ -243,7 +243,17 @@ html, body {
         margin: 0 1.5vw;
         border-left: none;
         border-right: none;
-    }
+    } */
+     .toc-floating {
+    left: 1%;
+    top: 11%;
+    right: 0;
+    border-radius: 15px;
+    width: 85vw;
+    margin: 0 1.5vw;
+    border-left: none;
+    border-right: none;
+}
 
     .nav-toggle-btn {
         top: 16px;
