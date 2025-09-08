@@ -53,6 +53,7 @@ html, body {
   background: linear-gradient(to right, #0e7947, #04632e);
   border-radius: 50%;
   z-index: 1000;
+  
 }
 
 .back-top-button {
@@ -411,4 +412,15 @@ html, body {
         right: 70px ;
         top: 20px;
     }
+}
+@media (max-width: 500px) {
+  .white-page {
+    height: 80vh; /* for very small screens */
+  }
+}
+
+@media (min-width: 501px) {
+  .white-page {
+    height: 80vh; /* for screens above 500px */
+  }
 }

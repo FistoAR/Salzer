@@ -114,6 +114,8 @@ revealImages.forEach((img, index) => {
   });
 });
 
+// --------------------nav audio and scroll trigger---------------------
+
 document.addEventListener("DOMContentLoaded", function () {
   const aboutLinks = document.querySelectorAll('.nav-links');
   const audio = document.getElementById('infoAudio');

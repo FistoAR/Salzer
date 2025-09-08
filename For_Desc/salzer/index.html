@@ -2468,25 +2468,29 @@ function Page12_2_Animation() {
 </script>
 
 <style>
-  .fade-in {
-    opacity: 1;
-    transition: opacity 0.4s ease-in;
-  }
-  .fade-out {
-    opacity: 0;
-    transition: opacity 0.4s ease-out;
-  }
+  /* .fade-in { */
+    /* opacity: 1; */
+    /* transition: opacity 0.4s ease-in; */
+  /* } */
+  /* .fade-out { */
+    /* opacity: 0; */
+    /* transition: opacity 0.4s ease-out; */
+  /* } */
 </style>
 <script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script>
   <script>
     const swiper = new Swiper(".swiper-slider", {
   // Optional parameters
   centeredSlides: true,
-  slidesPerView: 4,
+  slidesPerView: 3,
   grabCursor: true,
   freeMode: false,
   loop: true,
+  loopedSlides: 0,
   mousewheel: false,
+  simulateTouch: false,
+allowTouchMove: false,
+
   keyboard: {
     enabled: true
   },
@@ -2517,8 +2521,8 @@ function Page12_2_Animation() {
       spaceBetween: 20
     },
     1024: {
-      slidesPerView: 5,
-      spaceBetween: 20
+      slidesPerView: 4,
+      spaceBetween: 10
     }
   }
 });
