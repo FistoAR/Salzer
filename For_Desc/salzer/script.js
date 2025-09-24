@@ -72,3 +72,14 @@ document.addEventListener('keydown', e => {
     if (e.key === "Escape") shareMenu.classList.remove('show');
 });
 
+// ------------------------page flip blur issue code -----------------
+
+
+
+
+
+
+
+
+
+

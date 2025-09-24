@@ -188,7 +188,36 @@ window.addEventListener("touchstart", enableSoundOnce);
 <!-- GSAP CDN (only once in your project) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
+
 <script>
+  // Run after DOM is ready
+  document.addEventListener("DOMContentLoaded", () => {
+    // Preloader animation: light zoom + fade out
+    gsap.fromTo(
+      "#preloader img",
+      { scale: 1, opacity: 1 },
+      {
+        scale: 1.05,     // subtle zoom in
+        opacity: 0,      // fade out
+        duration: 4,     // fixed 4s
+        ease: "power2.inOut",
+        onComplete: () => {
+          document.getElementById("preloader").style.display = "none";
+        }
+      }
+    );
+
+    // Page content reveal after preloader finishes
+    gsap.to("#pageContent", {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: 4, // wait until preloader animation completes
+      ease: "power3.out"
+    });
+  });
+</script>
+<!-- <script>
   window.addEventListener("load", () => {
     // Preloader logo animation (scale + rotate + move up) - slower
     gsap.to("#preloader img", {
@@ -220,5 +249,32 @@ window.addEventListener("touchstart", enableSoundOnce);
   });
 </script>
 
+<script>
+  // Keep preloader visible while DOM loads
+  document.addEventListener("DOMContentLoaded", () => {
+    // When DOM is ready → start final 4s preloader animation
+    gsap.fromTo(
+      "#preloader img",
+      { scale: 1, opacity: 1 },
+      {
+        scale: 1.1,      // light zoom effect
+        opacity: 0,      // fade out
+        duration: 4,     // always 4s
+        ease: "power2.inOut",
+        onComplete: () => {
+          document.getElementById("preloader").style.display = "none";
+        }
+      }
+    );
 
+    // Reveal page content smoothly after 4s
+    gsap.to("#pageContent", {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      delay: 4,   // wait until preloader finishes
+      ease: "power3.out"
+    });
+  });
+</script> -->
 </html>
